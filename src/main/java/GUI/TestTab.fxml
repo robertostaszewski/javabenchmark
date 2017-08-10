@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.TestTabController">
+   <children>
+      <BorderPane prefHeight="305.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <ButtonBar BorderPane.alignment="BOTTOM_RIGHT">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" right="30.0" top="10.0" />
+               </BorderPane.margin>
+               <buttons>
+                  <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onMouseClicked="#closeThread" text="Cancel" />
+                  <Button fx:id="startBtn" mnemonicParsing="false" onMouseClicked="#setStartBtn" text="Start">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
+                     </padding>
+                  </Button>
+               </buttons>
+            </ButtonBar>
+         </bottom>
+         <top>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="598.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <CheckBox fx:id="cpu" mnemonicParsing="false" onMouseClicked="#changeButtonsStatus" text="CPU" HBox.hgrow="ALWAYS" />
+                  <CheckBox fx:id="gpu" mnemonicParsing="false" onMouseClicked="#changeButtonsStatus" text="GPU" />
+                  <CheckBox fx:id="disk" mnemonicParsing="false" onMouseClicked="#changeButtonsStatus" text="Disk" />
+                  <CheckBox fx:id="ram" mnemonicParsing="false" onMouseClicked="#changeButtonsStatus" text="RAM" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #bcbcbc; -fx-background-color: #dbdbdb;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextFlow fx:id="textFlow" textAlignment="CENTER" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+                  <HBox alignment="CENTER" prefHeight="202.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="Progress">
+                           <padding>
+                              <Insets right="30.0" />
+                           </padding>
+                        </Label>
+                        <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="354.0" progress="0.0" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="workingOn" alignment="CENTER" contentDisplay="CENTER" layoutX="254.0" layoutY="195.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
